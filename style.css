@@ -1,0 +1,466 @@
+/* Import Font Kustom */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap'); 
+
+/* Variabel Warna Emas dan Cokelat Klasik */
+:root {
+    --color-primary-dark: #6F4E37; 
+    --color-accent-gold: #D4AF37; 
+    --color-background-light: #FDF7E7; 
+    --color-text-dark: #333; 
+    --color-text-light: #555;
+    --color-splash-text: white; 
+    --color-dark-bg: #292429;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Merriweather', serif; 
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+    text-align: center;
+    line-height: 1.7;
+    overflow-x: hidden; 
+}
+
+/* MODIFIKASI UNTUK FULL WIDTH */
+.main-wrapper {
+    width: 100%; /* Mengambil lebar penuh halaman */
+    margin: 0 auto;
+    background-color: white; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    /* Ganti URL placeholder pattern dengan gambar background Anda */
+   
+}
+
+/* UTILITY: Batasi lebar konten di dalam seksi */
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: 768px; /* Batasan lebar konten agar mudah dibaca dan terpusat */
+}
+
+.section-padded {
+    padding: 60px 20px;
+}
+.hidden {
+    display: none !important;
+}
+
+/* Judul dan Subjudul */
+.section-subtitle {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5em;
+    color: var(--color-accent-gold);
+    margin-bottom: 5px;
+}
+.section-title-alt {
+    font-family: 'Cinzel', serif;
+    font-size: 2em;
+    color: var(--color-primary-dark);
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+.section-title-dark {
+    font-family: 'Cinzel', serif;
+    font-size: 2em;
+    color: white;
+    margin-top: 0;
+}
+.section-description {
+    font-size: 0.95em;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+/* ================================================= */
+/* SPLASH SCREEN (Tampilan Awal) */
+/* ================================================= */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+.splash-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5); 
+    z-index: 1;;
+}
+
+
+.splash-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 2;
+}
+
+
+.splash-content {
+    position: relative;
+    z-index: 3;
+    color: var(--color-splash-text);
+    padding: 20px;
+    max-width: 90%;
+}
+.splash-profile-image {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 20px auto;
+    border: 3px solid white; 
+    overflow: hidden;
+   border-radius: 50%; 
+   background-image: url('img/lesti_billar-20210528-002-non_fotografer_kly.webp');
+   background-size: cover;
+}
+
+.splash-names {
+    font-family: 'Great Vibes', cursive; 
+    font-size: 3.5em;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.guest-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-accent-gold);
+}
+.open-btn {
+    background-color: var(--color-accent-gold);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+/* ================================================= */
+/* KONTEN UTAMA (Transisi) */
+/* ================================================= */
+#main-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+}
+#main-content.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ================================================= */
+/* SEKSI PROFIL PENGANTIN */
+/* ================================================= */
+.profile-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+.profile-card {
+    flex: 1 1 280px;
+    background-color: #fff;
+    padding: 20px;
+}
+.profile-image-frame {
+    width: 200px; 
+    height: 200px;
+    margin: 0 auto 15px auto;
+    border: 3px solid var(--color-accent-gold);
+    overflow: hidden;
+    border-radius: 10px; 
+}
+
+.foto-bilar {
+    background-image: url('img/bilar.png');
+    background-size: cover;
+    background-position: 0 -10px;
+    background-repeat: no-repeat;
+}
+.profile-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================================================= */
+/* SEKSI COUNTDOWN TIMER */
+/* ================================================= */
+.timer-section {
+    background-color: var(--color-background-light);
+}
+.countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+.countdown-box {
+    background-color: #E6D8C4; 
+    color: var(--color-primary-dark);
+    padding: 15px 10px;
+    border-radius: 8px;
+    width: 70px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.countdown-value {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+.countdown-label {
+    font-size: 0.8em;
+}
+
+/* ================================================= */
+/* SEKSI DETAIL ACARA & MAPS */
+/* ================================================= */
+.event-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+.event-info-card {
+    flex: 1 1 300px; 
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+.map-container {
+    margin: 25px 0;
+    border: 2px solid var(--color-accent-gold); 
+    border-radius: 8px; 
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.btn {
+    background-color: var(--color-primary-dark);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+/* ================================================= */
+/* SEKSI GALERI FOTO */
+/* ================================================= */
+.gallery-section {
+    background-color: var(--color-background-light);
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    margin-top: 30px;
+}
+.gallery-item {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+    aspect-ratio: 4/3; 
+    transition: transform 0.3s ease;
+}
+
+.foto-top {
+    object-position: center top;
+}
+
+.gallery-item {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ================================================= */
+/* SEKSI UCAPAN/RSVP */
+/* ================================================= */
+.comments-section {
+    background-color: var(--color-dark-bg); 
+    color: white;
+}
+.comments-text {
+    font-size: 0.95em;
+    margin-bottom: 30px;
+}
+.comments-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px; 
+    margin: 0 auto;
+    color: var(--color-text-dark);
+    text-align: left;
+}
+.comments-count {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.comments-form input[type="text"],
+.comments-form textarea,
+.comments-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+.comments-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.comments-form .dark-btn {
+    background-color: var(--color-primary-dark);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    float: left; 
+}
+/* Dummy Comment Style */
+.dummy-comment {
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-top: 60px; 
+    border-radius: 4px;
+    clear: both;
+}
+.status {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7em;
+    font-weight: normal;
+    margin-left: 10px;
+    color: white;
+}
+.tidak-hadir {
+    background-color: #d9534f;
+}
+
+/* ================================================= */
+/* SEKSI KIRIM HADIAH / AMPLOP DIGITAL */
+/* ================================================= */
+.gift-section {
+    background-color: var(--color-dark-bg); 
+    padding-top: 0;
+    color: white;
+}
+.gift-box {
+    background-color: #292429; 
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 450px; 
+    margin: 0 auto 30px auto;
+}
+.gift-icon {
+    font-size: 2em;
+    color: var(--color-accent-gold);
+    margin-bottom: 15px;
+}
+.bank-card {
+    background-color: white;
+    color: var(--color-text-dark);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 25px auto;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bank-card img {
+    width: 130px;
+}
+
+.copy-btn {
+    background-color: var(--color-accent-gold);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.closing-text {
+    font-size: 0.85em;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-primary-dark);
+    color: white;
+    padding: 20px;
+    font-size: 0.85em;
+    margin-top: 0;
+}
+
+/* ================================================= */
+/* MEDIA QUERIES (Responsivitas) */
+/* ================================================= */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 600px) {
+    .names {
+        font-size: 3em;
+    }
+    .profile-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .event-cards-container {
+        flex-direction: column;
+    }
+    .countdown-grid {
+        flex-wrap: wrap;
+    }
+    .countdown-box {
+        width: 40%;
+        margin-bottom: 10px;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr; 
+    }
+}
